@@ -1,0 +1,21 @@
+<div class="col-md-12">
+  <a routerLink="/admin/categoria/inserir" type="button" class="btn-md btn btn-default get pull-right">Nova Categoria</a><br><br>
+  <table class="table">
+    <thead>
+      <tr>
+        <th title="Identificador da categoria.">#</th>
+        <th title="Nome da categoria.">Categoria</th>
+        <th title="Ações">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+       <tr *ngFor="let categoria of categorias">
+        <th scope="row">{{categoria.id}}</th>
+        <td>{{categoria.nome}}</td>
+        <td><button class="pull-right btn-md btn btn-danger" (click)="deletarCategoria(categoria.id)">Excluir</button>
+        <button class="pull-right btn-md btn btn-warning" [routerLink]="['/admin/categoria/atualizar', categoria.id]">Editar</button>
+        <button class="pull-right btn-md btn btn-info" [routerLink]="['/admin/categoria/visualizar', categoria.id]" >Vizualizar</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

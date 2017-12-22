@@ -1,0 +1,52 @@
+
+<header id="header"><!--header-->
+    <div class="nav navbar-inverse header-bottom"><!--header-bottom-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-9">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div class="mainmenu pull-left">
+              <ul class="nav navbar-nav collapse navbar-collapse">
+                <li><a href="index.html"  class="active">Home</a></li>
+                <li><a  style="cursor: pointer" [routerLink]="['/admin/produto']">Produtos</a></li>
+                <li><a  style="cursor: pointer" [routerLink]="['/admin/categoria']">Categorias</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!--/header-bottom-->
+  </header><!--/header-->
+
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="left-sidebar">
+            <h2>Categorias</h2>
+            <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+              <div *ngFor="let categoria of categorias" class="panel panel-default">
+                <div class="panel-heading">
+                  <h4 class="panel-title"><a href="#">{{ categoria.nome }}</a></h4>
+                </div>
+              </div>
+            </div><!--/category-products-->
+          </div>
+        </div>
+        <div class="col-md-9 padding-right">
+          <div class="features_items"><!--features_items-->
+            <h2 class="title text-center listagem">Listagem</h2>
+            <router-outlet></router-outlet>
+          </div><!--features_items-->
+        </div>
+      </div>
+    </div>
+  </section>
+
